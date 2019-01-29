@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<metadata xmlns="http://gate.ac.uk/ns/pipeline-metadata">
+  <pipeline-name>Epilepsy Bio-YODIE</pipeline-name>
+  <slug>swan-gate-yodie-epilepsy</slug>
+  <ordering>10</ordering>
+  <annotation-selectors>:InvestigationFinding</annotation-selectors>
+  <!-- <annotation-selectors>Output:</annotation-selectors> -->
+  <additional-annotations></additional-annotations>
+  <tags>
+    <tag>English</tag>
+    <tag>Named Entity</tag>
+  </tags>
+</metadata>
