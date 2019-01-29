@@ -1,16 +1,16 @@
 Phase: DrugFrequency
-Input: Numeric Token Split Lookup Lookup2 Time
+Input: Number Token Split Lookup Lookup2 Time
 Options: control=appelt
 
 Rule: XPerDay1
 (
-	{Numeric}
+	{Number}
 	{Token.string == "times"}
 	({Token.string == "a"}|{Token.string == "per"})
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = :match.Number.value, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: XPerDay2
@@ -20,7 +20,7 @@ Rule: XPerDay2
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: XPerDay3
@@ -31,17 +31,17 @@ Rule: XPerDay3
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: XDaily1
 (
-	{Numeric}
+	{Number}
 	({Token.string == "times"})?
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = :match.Number.value, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: XDaily2
@@ -50,7 +50,7 @@ Rule: XDaily2
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: XDaily3
@@ -59,47 +59,47 @@ Rule: XDaily3
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1 },
+:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1d },
 :match.Ignore = {}
 
 Rule: EveryXHours
 (
 	{Token.string == "every"}
-	{Numeric}
+	{Number}
 	{Token.string == "hours"}
 ):match
 -->
-:match.DoseFrequency = { rule = EveryXHours, frequency = 1d, time-unit = "hour", interval = :match.Numeric.value },
+:match.DoseFrequency = { rule = EveryXHours, frequency = 1d, time-unit = "hour", interval = :match.Number.value },
 :match.Ignore = {}
 
 Rule: EveryXDays
 (
 	{Token.string == "every"}
-	{Numeric}
+	{Number}
 	{Token.string == "days"}
 ):match
 -->
-:match.DoseFrequency = { rule = EveryXDays, frequency = 1d, time-unit = "day", interval = :match.Numeric.value },
+:match.DoseFrequency = { rule = EveryXDays, frequency = 1d, time-unit = "day", interval = :match.Number.value },
 :match.Ignore = {}
 
 Rule: EveryXWeeks
 (
 	{Token.string == "every"}
-	{Numeric}
+	{Number}
 	{Token.string == "weeks"}
 ):match
 -->
-:match.DoseFrequency = { rule = EveryXWeeks, frequency = 1d, time-unit = "week", interval = :match.Numeric.value },
+:match.DoseFrequency = { rule = EveryXWeeks, frequency = 1d, time-unit = "week", interval = :match.Number.value },
 :match.Ignore = {}
 
 Rule: EveryXMonths
 (
 	{Token.string == "every"}
-	{Numeric}
+	{Number}
 	{Token.string == "months"}
 ):match
 -->
-:match.DoseFrequency = { rule = EveryXMonths, frequency = 1d, time-unit = "month", interval = :match.Numeric.value },
+:match.DoseFrequency = { rule = EveryXMonths, frequency = 1d, time-unit = "month", interval = :match.Number.value },
 :match.Ignore = {}
 
 //this should be in a seperate phase with an optional DoseFrequency at the beginning

@@ -1,0 +1,15 @@
+Phase: floatToken
+Input: Token
+Options: control=all
+
+Rule: string2float
+(
+    {Token.kind =="number"}
+):tag
+-->
+:tag {
+    for (Annotation annotation : inputAS.get("Token", featureMap)) {
+    float val = Float.parseFloat(annotation.getFeatures().get("string").toString());
+    features.put("value", val);
+    }
+}

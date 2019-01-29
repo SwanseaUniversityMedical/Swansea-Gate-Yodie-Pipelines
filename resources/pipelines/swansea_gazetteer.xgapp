@@ -81,6 +81,12 @@
         <artifact>tagger-gate-time</artifact>
         <version>8.5</version>
       </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>tagger-numbers</artifact>
+        <version>8.5</version>
+        <downloadListeners/>
+      </gate.creole.Plugin-Maven>
     </localList>
     <collectionType>java.util.Collections$UnmodifiableSet</collectionType>
   </urlList>
@@ -367,6 +373,32 @@
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
             <runtimeParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>allowWithinWords</string>
+                  <boolean>true</boolean>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.numbers.NumbersTagger</resourceType>
+            <resourceName>Numbers Tagger</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
             </runtimeParams>
             <resourceType>gate.creole.Transducer</resourceType>
@@ -534,6 +566,7 @@
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[11]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[12]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[13]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[14]/pr"/>
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
