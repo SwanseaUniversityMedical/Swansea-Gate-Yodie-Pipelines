@@ -13,7 +13,15 @@ Rule: SecondDose
 	{DoseFrequency}):p2
 )
 -->
-:p2.Prescription = { rule = "secondDose", drug = :p1.Prescription.drug, CUI = :p1.Prescription.CUI, route = :p1.Prescription.route, status = :p1.Prescription.status, dose = :p2.Measurement@string, dose-val = :p2.Measurement.quantity, dose-unit = :p2.Measurement.units, dose-frequency = :p2.DoseFrequency.frequency, time-unit = :p2.DoseFrequency.time-unit, dose-interval = :p2.DoseFrequency.interval, when = :p2.DoseFrequency.when, drug-type = :p1.Prescription.drug-type }
+:p2.Prescription = { rule = "secondDose", 
+                     drug = :p1.Prescription.drug, 
+					 CUI = :p1.Prescription.CUI,    
+					 dose-val = :p2.Measurement.quantity, 
+					 dose-unit = :p2.Measurement.units, 
+					 dose-frequency = :p2.DoseFrequency.frequency, 
+					 time-unit = :p2.DoseFrequency.time-unit, 
+					 dose-interval = :p2.DoseFrequency.interval,
+					 Context = "NULL"}
 
 
 

@@ -13,7 +13,15 @@ Rule: keepPrescription
     ({Prescription0}):match
 ):matches
 -->
-:match.Prescription = { rule = keepPrescription,  drug = :match.Prescription0.drug,  CUI = :match.Prescription0.CUI, dose-val = :match.Prescription0.dose-val, dose-unit =:match.Prescription0.dose-unit, dose-frequency = :match.Prescription0.dose-frequency, time-unit = :match.Prescription0.time-unit dose-interval = :match.Prescription0.dose-interval, Context = :match.Prescription0.Context}
+:match.Prescription = { rule = keepPrescription,  
+                        drug = :match.Prescription0.drug,  
+                        CUI = :match.Prescription0.CUI, 
+                        dose-val = :match.Prescription0.dose-val, 
+                        dose-unit =:match.Prescription0.dose-unit, 
+                        dose-frequency = :match.Prescription0.dose-frequency, 
+                        time-unit = :match.Prescription0.time-unit, 
+                        dose-interval = :match.Prescription0.dose-interval, 
+                        Context = :match.Prescription0.Context}
 
 
 
@@ -24,4 +32,12 @@ Rule: keepPrescription
     ({Prescription0}):match
 ):matches
 -->
-:match.Prescription = { rule = keepPrescription,  drug = :match.Prescription0.drug,  CUI = :match.Prescription0.CUI, dose-val = :match.Prescription0.dose-val, dose-unit =:match.Prescription0.dose-unit, dose-frequency = :match.Prescription0.dose-frequency, time-unit = :match.Prescription0.time-unit dose-interval = :match.Prescription0.dose-interval, Context = :match.Prescription0.Context}
+:match.Prescription = { rule = keepPrescription,  
+                        drug = :match.Prescription0.drug,  
+                        CUI = :match.Prescription0.CUI, 
+                        dose-val = :match.Prescription0.dose-val, 
+                        dose-unit =:match.Prescription0.dose-unit, 
+                        dose-frequency = :match.Prescription0.dose-frequency, 
+                        time-unit = :match.Prescription0.time-unit, 
+                        dose-interval = :match.Prescription0.dose-interval, 
+                        Context = :match.Prescription0.Context}
