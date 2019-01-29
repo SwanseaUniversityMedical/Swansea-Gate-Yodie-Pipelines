@@ -19,3 +19,14 @@ Rule: doseMatch0
 -->
 :match.Prescription0 = { rule = doseMatch0,  drug = :match.Lookup.PREF,  CUI = :match.Lookup.inst, dose-val = :match.Measurement.quantity, dose-unit =:match.Measurement.units, dose-frequency = :match.DoseFrequency.frequency, time-unit = :match.DoseFrequency.time-unit dose-interval = :match.DoseFrequency.interval, Context = :match.ContextPrescription.context}
 
+Rule: doseMatch1
+(   
+
+    ({Lookup.STY=="Pharmacologic Substance"})
+    {Measurement}
+    {DoseFrequency}
+
+):match
+-->
+:match.Prescription0 = { rule = doseMatch1,  drug = :match.Lookup.PREF,  CUI = :match.Lookup.inst, dose-val = :match.Measurement.quantity, dose-unit =:match.Measurement.units, dose-frequency = :match.DoseFrequency.frequency, time-unit = :match.DoseFrequency.time-unit dose-interval = :match.DoseFrequency.interval, Context = "NULL"}
+

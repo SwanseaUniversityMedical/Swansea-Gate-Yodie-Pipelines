@@ -10,7 +10,7 @@ Rule: XPerDay1
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: XPerDay2
@@ -20,7 +20,7 @@ Rule: XPerDay2
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: XPerDay3
@@ -31,7 +31,7 @@ Rule: XPerDay3
 	{Token.string == "day"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: XDaily1
@@ -41,7 +41,7 @@ Rule: XDaily1
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = :match.Numeric.value, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: XDaily2
@@ -50,7 +50,7 @@ Rule: XDaily2
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = 1d, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: XDaily3
@@ -59,7 +59,7 @@ Rule: XDaily3
 	{Token.string == "daily"}
 ):match
 -->
-:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1d },
+:match.DoseFrequency = { rule = XPerDay, frequency = 2d, time-unit = "day", interval = 1 },
 :match.Ignore = {}
 
 Rule: EveryXHours
