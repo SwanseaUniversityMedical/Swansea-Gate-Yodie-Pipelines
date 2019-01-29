@@ -22,7 +22,7 @@ Rule: keepPrescription
                         time-unit = :match.Prescription0.time-unit, 
                         dose-interval = :match.Prescription0.dose-interval, 
                         Context = :match.Prescription0.Context,
-                        date = "NULL"}
+                        date = null}
 
 
 
@@ -42,4 +42,4 @@ Rule: keepPrescription
                         time-unit = :match.Prescription0.time-unit, 
                         dose-interval = :match.Prescription0.dose-interval, 
                         Context = :match.Prescription0.Context,
-                        date = "NULL"}
+                        date = null}
