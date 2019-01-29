@@ -7,7 +7,7 @@ Rule: Numerals
 	{Token.kind == number}
 ):match
 -->
-:match.Numeric = { rule = Numerals, value = :match@string}
+:match.Numeric = { rule = Numerals, value = :match.Token.string}
 
 
 Rule: Numerals
@@ -17,6 +17,6 @@ Rule: Numerals
 	{Token.kind == number}
 ):match
 -->
-:match.Numeric = { rule = Numerals, value = :match@string}
+:match.Numeric = { rule = Numerals, value = :match.Token.string}
 
 

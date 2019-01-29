@@ -17,4 +17,5 @@ Rule: keepPrescriptionInText
                         dose-frequency = :match.Prescription0.dose-frequency, 
                         time-unit = :match.Prescription0.time-unit, 
                         dose-interval = :match.Prescription0.dose-interval, 
-                        Context = :match.Prescription0.Context}
+                        Context = :match.Prescription0.Context,
+                        date = "NULL"}
