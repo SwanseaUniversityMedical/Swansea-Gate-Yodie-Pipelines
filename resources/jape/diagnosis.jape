@@ -14,19 +14,19 @@ Rule: getDiagnosis
 (
     ({Lookup.PREF == "Diagnosis"} | {Lookup.PREF == "Diagnosed"} | {Lookup.label == "suffers"})
     (
-    {Lookup.STY == "Disease or Syndrome"} | 
-	{Lookup.STY == "Sign or Symptom", Lookup.PREF != "Fit NOS"} | 
-	{Lookup.STY == "Mental or Behavioral Dysfunction"} |
-	{Lookup.STY == "Congenital Abnormality"} |
-	({Lookup.STY == "Diagnostic Procedure"} |
+    {Lookup.STY == "Disease or Syndrome", Lookup.Certainty >= 1} | 
+	{Lookup.STY == "Sign or Symptom", Lookup.PREF != "Fit NOS", Lookup.Certainty >= 1} | 
+	{Lookup.STY == "Mental or Behavioral Dysfunction", Lookup.Certainty >= 1} |
+	{Lookup.STY == "Congenital Abnormality", Lookup.Certainty >= 1} |
+	({Lookup.STY == "Diagnostic Procedure", Lookup.Certainty >= 1} |
 	{Lookup.Temporality == historical})?
 	)*
 	(
-	{Lookup.STY == "Disease or Syndrome"} |
-	{Lookup.STY == "Sign or Symptom", Lookup.PREF != "Fit NOS"} |
-	{Lookup.STY == "Mental or Behavioral Dysfunction"} |
-	{Lookup.STY == "Congenital Abnormality"} |
-	({Lookup.STY == "Diagnostic Procedure"})?
+	{Lookup.STY == "Disease or Syndrome", Lookup.Certainty >= 1} |
+	{Lookup.STY == "Sign or Symptom", Lookup.PREF != "Fit NOS", Lookup.Certainty >= 1} |
+	{Lookup.STY == "Mental or Behavioral Dysfunction", Lookup.Certainty >= 1} |
+	{Lookup.STY == "Congenital Abnormality", Lookup.Certainty >= 1} |
+	({Lookup.STY == "Diagnostic Procedure", Lookup.Certainty >= 1})?
 	):item
 ):diag
 -->

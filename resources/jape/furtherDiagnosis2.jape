@@ -1,0 +1,23 @@
+Phase: furtherDiagnosis
+Input:  MedFinding listSent Person DiseaseSeverity Sentence Split Lookup2
+Options: control=all
+
+
+
+Rule: furtherDiagnosis
+ 
+
+(
+    {MedFinding within listSent, MedFinding.Certainty >= 1}
+)*:item
+-->
+:item.Diagnosis = { 
+	rule = "listDiagnosis", 
+	PREF = :item.MedFinding.PREF,
+	CUI = :item.MedFinding.CUI, 
+	STY = :item.MedFinding.STY, 
+	Negation = :item.MedFinding.Negation,
+    Experiencer = :item.MedFinding.Experiencer, 
+	Temporality = :item.MedFinding.Temporality,
+	Certainty = :item.MedFinding.certainty
+}

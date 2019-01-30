@@ -8,7 +8,7 @@ Rule: probMedFinding
 Priority: 90
 (
 	({Lookup2.minorType == probability}):prob
-	({MedFinding}):umls
+	({MedFinding, MedFinding.Certainty==~"(?i)"}):umls
 ):match
 -->
 :umls {
@@ -21,7 +21,7 @@ Priority: 90
 Rule: default1
 Priority: 50
 (
-	({MedFinding.Negation=="Affirmed"}):umls
+	({MedFinding.Negation=="Affirmed", MedFinding.Certainty==~"(?i)"}):umls
 ):match
 -->
 :umls {
@@ -31,7 +31,7 @@ Priority: 50
 Rule: default2
 Priority: 50
 (
-	({MedFinding.Negation=="Negated"}):umls
+	({MedFinding.Negation=="Negated", MedFinding.Certainty==~"(?i)"}):umls
 ):match
 -->
 :umls {
