@@ -17,5 +17,5 @@ Rule: DiagnosisFromSeizure
 	Negation = :match.Lookup3.Negation,
 	Experiencer = null, 
     Temporality = null, 
-	Certainty = null
+	Certainty = 0
 }

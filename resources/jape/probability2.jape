@@ -1,20 +1,14 @@
 Imports: {import static gate.Utils.*; }
 
 Phase: ModifyLookup
-Input:Lookup Lookup2 Lookup3 Sentence
+Input:Lookup2 MedFinding Sentence
 Options: control=appelt
 
-/*
- * assigns a certainty level  (1-5, 5 most certain)to Lookups 
- * using words such as "probably", "unlikely" etc
-*/
-
-
-Rule: prob1
+Rule: probMedFinding
 Priority: 90
 (
 	({Lookup2.minorType == probability}):prob
-	({Lookup.majorType == umls}):umls
+	({MedFinding}):umls
 ):match
 -->
 :umls {
@@ -23,10 +17,11 @@ Priority: 90
 }
 
 
+
 Rule: default1
 Priority: 50
 (
-	({Lookup.majorType == umls, Lookup.Certainty==~"(?i)", Lookup.Negation=="Affirmed"}):umls
+	({MedFinding.Negation=="Affirmed"}):umls
 ):match
 -->
 :umls {
@@ -36,11 +31,9 @@ Priority: 50
 Rule: default2
 Priority: 50
 (
-	({Lookup.majorType == umls, Lookup.Certainty ==~"(?i)", Lookup.Negation=="Negated"}):umls
+	({MedFinding.Negation=="Negated"}):umls
 ):match
 -->
 :umls {
   umlsAnnots.iterator().next().getFeatures().put("Certainty",1);
 }
-
-
