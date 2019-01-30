@@ -10,4 +10,12 @@ Rule: DiagnosisFromSeizure
 
 ):match
 -->
-:match.Diagnosis = {rule = DiagFromSeziure, PREF = :match.Lookup3.PREF, CUI = :match.Lookup3.CUI, Negation = :match.Lookup3.Negation, Certainty = :match.Lookup3.Certainty}
+:match.Diagnosis = {
+	rule = DiagFromSeziure, 
+	PREF = :match.Lookup3.PREF, 
+	CUI = :match.Lookup3.CUI, 
+	Negation = :match.Lookup3.Negation,
+	Experiencer = null, 
+    Temporality = null, 
+	Certainty = null
+}

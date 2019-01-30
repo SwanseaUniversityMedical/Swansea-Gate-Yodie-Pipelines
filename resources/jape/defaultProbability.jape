@@ -1,11 +1,11 @@
 Imports: {import static gate.Utils.*; }
 
 Phase: ModifyLookup
-Input:Lookup Lookup2
+Input:Lookup Lookup2 Lookup3
 Options: control=appelt
 
 /*
- * if not certainty terms found, use Lookup.Negation to assign default value
+ * if no certainty terms found, use Lookup.Negation to assign default value
 */
 
 
@@ -33,13 +33,33 @@ Rule: default2
 
 
 
+Rule: default3
+(
+	({Lookup3.Negation=="Negated"}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Certainty",1);
+}
+
+Rule: default4
+(
+	({Lookup3.Negation=="Affirmed"}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Certainty",5);
+}
 
 
 
 
 
 
-Rule: default2
+
+
+
+Rule: default5
 (
 	({Lookup.Certainty ==" "}):umls
 ):match

@@ -28,7 +28,7 @@ Rule: getDiagnosis
 	{Lookup.STY == "Congenital Abnormality"} |
 	({Lookup.STY == "Diagnostic Procedure"})?
 	):item
-):label
+):diag
 -->
 :item.Diagnosis = { 
 rule = "getDiagnosis", 

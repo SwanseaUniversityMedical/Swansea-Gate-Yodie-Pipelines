@@ -11,8 +11,16 @@ Rule: furtherDiagnosis
     {MedFinding within listSent}
 )*:item
 -->
-:item.Diagnosis = { rule = "listDiagnosis", PREF = :item.MedFinding.PREF  ,CUI = :item.MedFinding.CUI, STY = :item.MedFinding.STY, Negation = :item.MedFinding.Negation,
-Experiencer = :item.MedFinding.Experiencer, Temporality = :item.MedFinding.Temporality,Certainty = :item.Lookup.certainty,}
+:item.Diagnosis = { 
+	rule = "listDiagnosis", 
+	PREF = :item.MedFinding.PREF,
+	CUI = :item.MedFinding.CUI, 
+	STY = :item.MedFinding.STY, 
+	Negation = :item.MedFinding.Negation,
+    Experiencer = :item.MedFinding.Experiencer, 
+	Temporality = :item.MedFinding.Temporality,
+	Certainty = :item.Lookup.certainty
+}
 
 
 
@@ -36,8 +44,15 @@ Rule: withEpilepsy
     ):diag
 ):item
 -->
-:item.Diagnosis = {rule = "withEpilepsy", PREF = :diag.Lookup.PREF  ,CUI = :diag.Lookup.inst, Negation = :diag.Lookup.Negation,
-Experiencer = :diag.Lookup.Experiencer, Temporality = :diag.Lookup.Temporality,Certainty = :diag.Lookup.Certainty}
+:item.Diagnosis = {
+	rule = "withEpilepsy", 
+	PREF = :diag.Lookup.PREF  ,
+	CUI = :diag.Lookup.inst, 
+	Negation = :diag.Lookup.Negation,
+    Experiencer = :diag.Lookup.Experiencer, 
+	Temporality = :diag.Lookup.Temporality,
+	Certainty = :diag.Lookup.Certainty
+}
 
 
 
@@ -49,8 +64,15 @@ Rule: Refractory
 	{Lookup.STY == "Disease or Syndrome"}
 ):item
 -->
-:item.Diagnosis = {rule = "Refractory", PREF = :item.Lookup.PREF  ,refractory = "C1096063", Negation = :item.Lookup.Negation,
-Experiencer = :item.Lookup.Experiencer, Temporality = :item.Lookup.Temporality,Certainty = :item.Lookup.Certainty}
+:item.Diagnosis = {
+	rule = "Refractory", 
+	PREF = :item.Lookup.PREF  ,
+	refractory = "C1096063", 
+	Negation = :item.Lookup.Negation,
+    Experiencer = :item.Lookup.Experiencer, 
+	Temporality = :item.Lookup.Temporality,
+	Certainty = :item.Lookup.Certainty
+}
 
 
 
