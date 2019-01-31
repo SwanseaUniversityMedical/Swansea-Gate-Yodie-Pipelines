@@ -1,11 +1,10 @@
 Phase: KeepPrescription
 Input: Prescription0 startList Person Temporal
-Options: control=all
+Options: control=brill
 
 /* 
  * Added layer to add specificty to SLaM prescription annotations
 */
-
 Rule: keepPrescription
 (   
     {startList}
@@ -13,7 +12,7 @@ Rule: keepPrescription
     ({Prescription0}):match
 ):matches
 -->
-:match.Prescription = { rule = keepPrescription,  
+:match.Prescription = { rule = keepPrescription1,  
                         drug = :match.Prescription0.drug,  
                         CUI = :match.Prescription0.CUI, 
                         dose-val = :match.Prescription0.dose-val, 
@@ -33,7 +32,7 @@ Rule: keepPrescription
     ({Prescription0}):match
 ):matches
 -->
-:match.Prescription = { rule = keepPrescription,  
+:match.Prescription = { rule = keepPrescription2,  
                         drug = :match.Prescription0.drug,  
                         CUI = :match.Prescription0.CUI, 
                         dose-val = :match.Prescription0.dose-val, 

@@ -1,0 +1,28 @@
+Phase: MakeNumber
+Input: Lookup Lookup3
+Options: control = all
+ 
+Rule: MakeNum
+({Lookup}):look
+-->
+:look {
+for(Annotation a : lookAnnots) {
+if(a.getFeatures().get("Certainty") != null) {
+a.getFeatures().put("Certainty", Long.valueOf(
+a.getFeatures().get("Certainty").toString()));
+}
+}
+}
+
+
+Rule: MakeNum2
+({Lookup2}):look
+-->
+:look {
+for(Annotation a : lookAnnots) {
+if(a.getFeatures().get("Certainty") != null) {
+a.getFeatures().put("Certainty", Long.valueOf(
+a.getFeatures().get("Certainty").toString()));
+}
+}
+}

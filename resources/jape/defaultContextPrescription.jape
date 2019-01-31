@@ -1,0 +1,17 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: ModifyPrescriptionContext
+Input: Prescription
+Options: control=appelt
+
+
+
+Rule: default1
+Priority: 50
+(
+	({Prescription.Context!="future"} | {Prescription.Context!="past"} | {Prescription.Context!="current"} | {Prescription.Context!="hypothetical"}):umls
+):match
+-->
+:umls {
+  getOnlyAnn(umlsAnnots).getFeatures().put("Context",current);
+}
