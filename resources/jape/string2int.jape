@@ -16,7 +16,7 @@ a.getFeatures().get("Certainty").toString()));
 
 
 Rule: MakeNum2
-({Lookup2}):look
+({Lookup3}):look
 -->
 :look {
 for(Annotation a : lookAnnots) {

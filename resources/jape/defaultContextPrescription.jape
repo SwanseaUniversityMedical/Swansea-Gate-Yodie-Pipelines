@@ -13,5 +13,5 @@ Priority: 50
 ):match
 -->
 :umls {
-  getOnlyAnn(umlsAnnots).getFeatures().put("Context",current);
+  getOnlyAnn(umlsAnnots).getFeatures().put("Context","current");
 }
