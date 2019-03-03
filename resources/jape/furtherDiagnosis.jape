@@ -1,6 +1,6 @@
 Phase: furtherDiagnosis
 Input: listSent Lookup Person DiseaseSeverity Sentence Split Lookup2
-Options: control=all
+Options: control=brill
 
 
 Rule: withEpilepsy
