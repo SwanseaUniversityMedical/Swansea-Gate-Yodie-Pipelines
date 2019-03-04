@@ -853,6 +853,10 @@
                   <string>Bio</string>
                 </entry>
                 <entry>
+                  <string>inputASName</string>
+                  <string>Original markups</string>
+                </entry>
+                <entry>
                   <string>annotationTypes</string>
                   <gate.util.persistence.CollectionPersistence>
                     <localList>
@@ -861,10 +865,6 @@
                     </localList>
                     <collectionType>java.util.ArrayList</collectionType>
                   </gate.util.persistence.CollectionPersistence>
-                </entry>
-                <entry>
-                  <string>inputASName</string>
-                  <string>Original markups</string>
                 </entry>
               </localMap>
             </runtimeParams>
@@ -1353,7 +1353,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>2</runMode>
+          <runMode>1</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -1369,25 +1369,22 @@
                   <string>Epilepsy</string>
                 </entry>
                 <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
                   <string>annotationTypes</string>
                   <gate.util.persistence.CollectionPersistence>
                     <localList>
                       <string>Prescription</string>
-                      <string>ClinicDate</string>
-                      <string>Date_of_Birth</string>
                       <string>Diagnosis</string>
                       <string>Investigations</string>
                       <string>SeizureFrequency</string>
                       <string>SeizureSince</string>
                       <string>SeizureFree</string>
-                      <string>Lookup</string>
                     </localList>
-                    <collectionType>java.util.ArrayList</collectionType>
+                    <collectionType>java.util.Arrays$ArrayList</collectionType>
                   </gate.util.persistence.CollectionPersistence>
-                </entry>
-                <entry>
-                  <string>inputASName</string>
-                  <string>Bio</string>
                 </entry>
               </localMap>
             </runtimeParams>

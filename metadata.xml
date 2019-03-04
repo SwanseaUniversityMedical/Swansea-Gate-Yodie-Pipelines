@@ -3,7 +3,7 @@
   <pipeline-name>Epilepsy Bio-YODIE</pipeline-name>
   <slug>swan-gate-yodie-epilepsy</slug>
   <ordering>10</ordering>
-  <annotation-selectors>Bio:InvestigationFinding, Bio:Prescription</annotation-selectors>
+  <annotation-selectors>Epilepsy:InvestigationFinding, Epilepsy:Prescription, Epilepsy:Diagnosis</annotation-selectors>
   <!-- <annotation-selectors>Output:</annotation-selectors> -->
   <additional-annotations></additional-annotations>
   <tags>

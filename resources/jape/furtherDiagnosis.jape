@@ -22,6 +22,7 @@ Rule: withEpilepsy
 :item.Diagnosis = {
 	rule = "withEpilepsy", 
 	PREF = :diag.Lookup.PREF  ,
+	STY = :diag.Lookup.STY,
 	CUI = :diag.Lookup.inst, 
 	Negation = :diag.Lookup.Negation,
     Experiencer = :diag.Lookup.Experiencer, 
@@ -41,8 +42,9 @@ Rule: Refractory
 -->
 :item.Diagnosis = {
 	rule = "Refractory", 
-	PREF = :item.Lookup.PREF  ,
-	refractory = "C1096063", 
+	PREF = :item.Lookup.PREF ,
+	STY = :item.Lookup.STY,
+	CUI = "C1096063", 
 	Negation = :item.Lookup.Negation,
     Experiencer = :item.Lookup.Experiencer, 
 	Temporality = :item.Lookup.Temporality,

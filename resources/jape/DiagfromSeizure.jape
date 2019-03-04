@@ -1,6 +1,6 @@
 Phase: DiagnosisfromSeziure
 Input:  Person Lookup3 Sentence
-Options: control=appelt
+Options: control=brill
 
 Rule: DiagnosisFromSeizure
 (
@@ -12,7 +12,8 @@ Rule: DiagnosisFromSeizure
 -->
 :match.Diagnosis = {
 	rule = DiagFromSeziure, 
-	PREF = :match.Lookup3.PREF, 
+	PREF = :match.Lookup3.PREF,
+	STY = :match.Lookup3.STY, 
 	CUI = :match.Lookup3.CUI, 
 	Negation = :match.Lookup3.Negation,
 	Experiencer = null, 
